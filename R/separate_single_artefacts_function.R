@@ -2,10 +2,10 @@
 #'
 #' @param pathname_input Pathname to the folder containing the JPEG images with multiple artefacts on it.
 #' @param pathname_output Pathname to the folder where the JPEGs of the singled-out artefacts from this function should be stored.
+#'
 #' @return If return_combined_outlines = TRUE, returns the combined Coo objects in a single Opn file. If return_combined_outlines = FALSE, returns a list of coordinate matrices of each open outline.
-
-
-
+#'
+#' @export
 separate_single_artefacts_function <- function(pathname_input, pathname_output) {
   files_to_use_names <- list.files(pathname_input, full.names = FALSE)
   pathname_input <- list.files(pathname_input, full.names = TRUE)
