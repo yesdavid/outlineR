@@ -14,10 +14,10 @@ devtools::install_github("yesdavid/outlineR", dependencies = TRUE)
 
 ```
 # Define where the images containing multiple artefacts are right now.
-pathname_input <- "./2_data/raw_data/Points" 
+pathname_input <- "./2_data/raw_data" 
 
 # Define where the separate images should be saved.
-pathname_output <- "./2_data/derived_data/" 
+pathname_output <- "./2_data/derived_data" 
 ```
 
 1. Separate single artefacts/barbs from picture with multiple artefacts/barbs on one image.

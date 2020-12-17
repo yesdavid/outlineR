@@ -79,17 +79,20 @@ separate_single_artefacts_function <- function(pathname_input, pathname_output){
 
     for (object_counter in all_objects){
 
-      # freistellen der einzelnen artefakte (bisher nur des groessten artefakts)
+      # single out individual artefacts (starting with the largest)
+
       current_object <- EBImage::rmObjects(bin_image_labeled_filled_frame,
                                            all_objects[all_objects!=object_counter])
       # EBImage::display(current_object,
       #                  method="raster",
       #                  interpolate=F)
 
+      # inverts the image (black artefact on white background)
       current_object_inverted <- 1-current_object
-      # invertieren - sodass das artefakt schwarz auf weissem hintergrund ist - und als jpg speichern
+
+      # save it as .jpg with a pseudo-number (does not represent the number which the artefact might have on the page)
       EBImage::writeImage(current_object_inverted,
-                          paste0(pathname_output, strsplit(files_to_use_names[current_masked_file], split = "[.]")[[1]][1], "_pseudo_no_", object_counter, ".jpg"))
+                          paste0(pathname_output, "/", strsplit(files_to_use_names[current_masked_file], split = "[.]")[[1]][1], "_pseudo_no_", object_counter, ".jpg"))
 
     }
 
