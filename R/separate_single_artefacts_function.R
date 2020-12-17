@@ -8,8 +8,10 @@
 
 separate_single_artefacts_function <- function(pathname_input, pathname_output){
 
-  pathname_input <- list.files(pathname_input, full.names = TRUE)
+
   files_to_use_names <- list.files(pathname_input, full.names = FALSE)
+  pathname_input <- list.files(pathname_input, full.names = TRUE)
+
 
 
   pb <- txtProgressBar(min = 0, max = length(pathname_input), style = 3)
