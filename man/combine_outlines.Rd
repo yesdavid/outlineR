@@ -2,16 +2,19 @@
 % Please edit documentation in R/combine_outlines_function.R
 \name{combine_outlines}
 \alias{combine_outlines}
-\title{A function containing a recursive loop to combine a list of single outline coordinate-sets into a single Momocs::Out/Opn file}
+\title{combine_outlines}
 \usage{
 combine_outlines(single_outlines_list)
 }
 \arguments{
-\item{single_outlines_list}{A list containing separate coordinate matrices (Momocs' Coo objects) as for example created with the "separate_single_artefacts_function" function.}
+\item{single_outlines_list}{A list containing separate coordinate
+matrices (Momocs' Coo objects) as for example created with the
+"separate_single_artefacts_function" function.}
 }
 \value{
 Returns the combined Coo objects in a single Out/Opn file
 }
 \description{
-A function containing a recursive loop to combine a list of single outline coordinate-sets into a single Momocs::Out/Opn file
+A function containing a recursive loop to combine a list of single
+outline coordinate-sets into a single Momocs::Out/Opn file
 }

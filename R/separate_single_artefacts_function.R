@@ -1,9 +1,16 @@
-#' A function to separate single artefacts from an image containing multiple artefacts.
+#' separate_single_artefacts
 #'
-#' @param pathname_input Pathname to the folder containing the JPEG images with multiple artefacts on it.
-#' @param pathname_output Pathname to the folder where the JPEGs of the singled-out artefacts from this function should be stored.
+#' A function to separate single artefacts from an image containing
+#' multiple artefacts.
 #'
-#' @return If return_combined_outlines = TRUE, returns the combined Coo objects in a single Opn file. If return_combined_outlines = FALSE, returns a list of coordinate matrices of each open outline.
+#' @param pathname_input Pathname to the folder containing the JPEG
+#' images with multiple artefacts on it.
+#' @param pathname_output Pathname to the folder where the JPEGs of
+#' the singled-out artefacts from this function should be stored.
+#'
+#' @return If return_combined_outlines = TRUE, returns the combined
+#' Coo objects in a single Opn file. If return_combined_outlines = FALSE,
+#' returns a list of coordinate matrices of each open outline.
 #'
 #' @export
 separate_single_artefacts <- function(pathname_input, pathname_output) {

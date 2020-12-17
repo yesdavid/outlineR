@@ -1,5 +1,6 @@
-#' A function to create open outlines from closed outlines.
+#' get_open_outlines_from_closed_outlines
 #'
+#' A function to create open outlines from closed outlines.
 #' The way it is implemented, the open outline will start at the highest,
 #' left-most coordinate, run clock-wise, and will end at the lowest,
 #' left-most coordinate.

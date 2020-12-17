@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_open_outlines_from_closed_outlines.R
 \name{get_open_outlines_from_closed_outlines}
 \alias{get_open_outlines_from_closed_outlines}
-\title{A function to create open outlines from closed outlines.}
+\title{get_open_outlines_from_closed_outlines}
 \usage{
 get_open_outlines_from_closed_outlines(
   outlines_combined,
@@ -22,6 +22,7 @@ objects in a single Opn file. If return_combined_outlines = FALSE, returns
 a list of coordinate matrices of each open outline.
 }
 \description{
+A function to create open outlines from closed outlines.
 The way it is implemented, the open outline will start at the highest,
 left-most coordinate, run clock-wise, and will end at the lowest,
 left-most coordinate.

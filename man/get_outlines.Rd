@@ -2,16 +2,22 @@
 % Please edit documentation in R/get_outlines_function.R
 \name{get_outlines}
 \alias{get_outlines}
-\title{Uses Momocs::import_jpg1() to import outline coordinates from the single .jpg files which are either already avaiable, or were created using the separate_single_artefacts_function function. This function preserves the filenames.}
+\title{get_outlines}
 \usage{
 get_outlines(pathname_output)
 }
 \arguments{
-\item{pathname_output}{The path to the single .jpg files of the artefacts from which the outlines should be derived (as for example created in the separate_single_artefacts_function function).}
+\item{pathname_output}{The path to the single .jpg files of the artefacts
+from which the outlines should be derived (as for example created in the
+separate_single_artefacts_function function).}
 }
 \value{
-Returns a Momocs Out file containing the outlines' coordinates with their associated IDs, derived from the file name.
+Returns a Momocs Out file containing the outlines' coordinates
+with their associated IDs, derived from the file name.
 }
 \description{
-Uses Momocs::import_jpg1() to import outline coordinates from the single .jpg files which are either already avaiable, or were created using the separate_single_artefacts_function function. This function preserves the filenames.
+Uses Momocs::import_jpg1() to import outline coordinates from the single
+.jpg files which are either already avaiable, or were created using the
+separate_single_artefacts_function function. This function preserves the
+filenames.
 }
