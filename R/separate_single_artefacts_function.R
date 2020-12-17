@@ -19,7 +19,7 @@ separate_single_artefacts_function <- function(pathname_input, pathname_output){
 
     # plot(x_raw)
 
-    x_grayscale <- grayscale(x_raw)
+    x_grayscale <- imager::grayscale(x_raw)
     # plot(x_grayscale)
 
     # x_binary <- round(x_grayscale/max(x_grayscale),0)
