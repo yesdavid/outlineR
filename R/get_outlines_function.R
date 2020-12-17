@@ -13,7 +13,7 @@ get_outlines <- function(pathname_output) {
 
   outlines <- list()
 
-  pb2 <- txtProgressBar(min = 0, max = length(artefact_names), style = 3)
+  pb2 <- utils::txtProgressBar(min = 0, max = length(artefact_names), style = 3)
   for (input_counter in 1:length(artefact_names)) {
 
     # per Momocs werden die outlines eines jpgs geladen
@@ -35,7 +35,7 @@ get_outlines <- function(pathname_output) {
     names(out_file_single_outline) <- strsplit(artefact_names[input_counter], split = "[.]")[[1]][1]
     outlines[[gsub("-", "_", strsplit(artefact_names[input_counter], split = "[.]")[[1]][1])]] <- out_file_single_outline
 
-    setTxtProgressBar(pb2, input_counter)
+    utils::setTxtProgressBar(pb2, input_counter)
   }
   close(pb2)
 

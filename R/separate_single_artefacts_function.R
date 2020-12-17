@@ -11,9 +11,7 @@ separate_single_artefacts <- function(pathname_input, pathname_output) {
   files_to_use_names <- list.files(pathname_input, full.names = FALSE)
   pathname_input <- list.files(pathname_input, full.names = TRUE)
 
-
-
-  pb <- txtProgressBar(min = 0, max = length(pathname_input), style = 3)
+  pb <- utils::txtProgressBar(min = 0, max = length(pathname_input), style = 3)
   for (current_masked_file in 1:length(pathname_input)) {
     x_raw <- imager::load.image(pathname_input[current_masked_file])
 
@@ -101,7 +99,7 @@ separate_single_artefacts <- function(pathname_input, pathname_output) {
     }
 
     gc()
-    setTxtProgressBar(pb, current_masked_file)
+    utils::setTxtProgressBar(pb, current_masked_file)
   }
   close(pb)
 }

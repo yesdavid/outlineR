@@ -17,6 +17,7 @@ Imports:
     EBImage,
     imager,
     Momocs,
-    testit
+    testit,
+    utils
 Remotes: bioc::release/EBImage
 SystemRequirements: fftw3
