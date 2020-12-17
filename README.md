@@ -1,6 +1,6 @@
 # outlineR
 
-This package is basically just a helpful wrapper around functions from mainly the _Momocs_ (Bonhomme et al. 2014), _EBImage_ (Pau et al. 2010), and _imager_ (Barthelme et al. 2020) packages. It is designed for the fast and easy extraction of single outline shapes from, for example, stone tools from images containing multiple artefacts, such as the ones present in archaeological publications.
+This package is basically just a helpful wrapper around functions from mainly the _Momocs_ (Bonhomme et al. 2014), _EBImage_ (Pau et al. 2010), and _imager_ (Barthelme et al. 2020) packages. It is designed for the fast and easy extraction of single outline shapes of, for example, stone tools from images containing multiple thereof, such as the ones present in archaeological publications.
 
 
 ## Installation
