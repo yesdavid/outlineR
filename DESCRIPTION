@@ -1,15 +1,14 @@
 Package: outlineR
-Title: What the Package Does (One Line, Title Case)
+Title: A Package to Derive Outline Shapes from (multiple) Artefacts on JPEG Images. 
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "David Nicolas",
+           family = "Matzig",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "matzigdavid@gmail.com",
+           comment = c(ORCID = "0000-0001-7349-5401"))
+Description: A package to create derive outline shapes from (multiple) artefacts on images.
+License: `use_mit_license()`
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
