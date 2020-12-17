@@ -7,13 +7,11 @@
 
 
 
-open_outlines_from_closed_outlines_function <- function(outlines_combined, return_combined_outlines = TRUE){
-
+open_outlines_from_closed_outlines_function <- function(outlines_combined, return_combined_outlines = TRUE) {
   open_outlines_list <- list()
 
   pb <- txtProgressBar(min = 0, max = length(outlines_combined), style = 3)
-  for(counter in 1:length(outlines_combined)){
-
+  for (counter in 1:length(outlines_combined)) {
     current_outline_name <- names(outlines_combined$coo[counter])
 
     current_outline <- outlines_combined$coo[[counter]]
@@ -22,22 +20,30 @@ open_outlines_from_closed_outlines_function <- function(outlines_combined, retur
     names(current_outline_df) <- c("X", "Y")
 
 
-    starting_lowest_x <- subset(current_outline_df,
-                                X == min(current_outline_df$X))
+    starting_lowest_x <- subset(
+      current_outline_df,
+      X == min(current_outline_df$X)
+    )
 
-    starting_lowest_x_highest_y <- subset(starting_lowest_x,
-                                          Y == max(starting_lowest_x$Y))
+    starting_lowest_x_highest_y <- subset(
+      starting_lowest_x,
+      Y == max(starting_lowest_x$Y)
+    )
 
-    ending_lowest_x <- subset(current_outline_df,
-                              X == min(current_outline_df$X))
+    ending_lowest_x <- subset(
+      current_outline_df,
+      X == min(current_outline_df$X)
+    )
 
-    ending_lowest_x_highest_y <- subset(ending_lowest_x,
-                                        Y == min(ending_lowest_x$Y))
+    ending_lowest_x_highest_y <- subset(
+      ending_lowest_x,
+      Y == min(ending_lowest_x$Y)
+    )
 
     start <- rownames(starting_lowest_x_highest_y)
     end <- rownames(ending_lowest_x_highest_y)
 
-    closed <- Momocs::Opn(current_outline[c(1:end,start:nrow(current_outline)),])
+    closed <- Momocs::Opn(current_outline[c(1:end, start:nrow(current_outline)), ])
 
     open_outlines_list[[current_outline_name]] <- coo_slidegap(closed, force = T)
 
@@ -47,22 +53,9 @@ open_outlines_from_closed_outlines_function <- function(outlines_combined, retur
   close(pb)
 
 
-  if(return_combined_outlines == TRUE){
+  if (return_combined_outlines == TRUE) {
     return(outlineR::combine_outlines_function(open_outlines_list))
   } else {
     return(open_outlines_list)
   }
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
