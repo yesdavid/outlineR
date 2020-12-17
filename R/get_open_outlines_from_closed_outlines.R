@@ -4,12 +4,12 @@
 #' @param return_combined_outlines (default = TRUE) A logical parameter stating wether to output a Momocs Opn-file, or a list of coordinate matrices of each open outline.
 #' @return If return_combined_outlines = TRUE, returns the combined Coo objects in a single Opn file. If return_combined_outlines = FALSE, returns a list of coordinate matrices of each open outline.
 #' @examples
-#' open_outlines_from_closed_outlines_function(closed_outlines_Momocs = outlines_combined, return_combined_outlines = TRUE)
+#' open_outlines_from_closed_outlines_function(outlines_combined = outlines_combined, return_combined_outlines = TRUE)
 
 
 
 
-open_outlines_from_closed_outlines_function <- function(closed_outlines_Momocs = outlines_combined, return_combined_outlines = TRUE){
+open_outlines_from_closed_outlines_function <- function(outlines_combined, return_combined_outlines = TRUE){
 
   open_outlines_list <- list()
 

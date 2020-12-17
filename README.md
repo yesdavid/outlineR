@@ -35,7 +35,7 @@ single_outlines_list <- get_outlines_function(pathname_output = pathname_output)
 
 3. Combine all outlines into a common file.
 ```
-combine_outlines_function(single_outlines_list = single_outlines_list)
+outlines_combined <- combine_outlines_function(single_outlines_list = single_outlines_list)
 ```
 
 4. Inspect your outlines.

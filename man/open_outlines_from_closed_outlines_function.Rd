@@ -5,7 +5,7 @@
 \title{A function to create open outlines from closed outlines. The way it is implemented, the open outline will start at the highest, left-most coordinate, run clock-wise, and will end at the lowest, left-most coordinate.}
 \usage{
 open_outlines_from_closed_outlines_function(
-  closed_outlines_Momocs = outlines_combined,
+  outlines_combined,
   return_combined_outlines = TRUE
 )
 }
@@ -21,5 +21,5 @@ If return_combined_outlines = TRUE, returns the combined Coo objects in a single
 A function to create open outlines from closed outlines. The way it is implemented, the open outline will start at the highest, left-most coordinate, run clock-wise, and will end at the lowest, left-most coordinate.
 }
 \examples{
-open_outlines_from_closed_outlines_function(closed_outlines_Momocs = outlines_combined, return_combined_outlines = TRUE)
+open_outlines_from_closed_outlines_function(outlines_combined = outlines_combined, return_combined_outlines = TRUE)
 }

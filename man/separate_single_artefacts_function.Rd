@@ -4,10 +4,7 @@
 \alias{separate_single_artefacts_function}
 \title{A function to create open outlines from closed outlines. The way it is implemented, the open outline will start at the highest, left-most coordinate, run clock-wise, and will end at the lowest, left-most coordinate.}
 \usage{
-separate_single_artefacts_function(
-  pathname_input = pathname_input,
-  pathname_output = pathname_output
-)
+separate_single_artefacts_function(pathname_input, pathname_output)
 }
 \arguments{
 \item{single_outlines_list}{A Momocs Out file containing closed outlines.}

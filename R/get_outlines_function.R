@@ -6,7 +6,7 @@
 
 
 
-get_outlines_function <- function(pathname_output = pathname_output){
+get_outlines_function <- function(pathname_output){
 
   artefact_names <- list.files(pathname_output,
                                      pattern = ".jpg",

@@ -4,7 +4,7 @@
 \alias{combine_outlines_function}
 \title{A function containing a recursive loop to combine a list of single outline coordinate-sets into a single Momocs::Out/Opn file}
 \usage{
-combine_outlines_function(single_outlines_list = single_outlines_list)
+combine_outlines_function(single_outlines_list)
 }
 \arguments{
 \item{single_outlines_list}{A list containing separate coordinate matrices (Momocs' Coo objects) as for example created with the "separate_single_artefacts_function" function.}

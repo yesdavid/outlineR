@@ -6,7 +6,7 @@
 #' combine_outlines_function(single_outlines_list = single_outlines_list)
 
 
-combine_outlines_function <- function(single_outlines_list = single_outlines_list){
+combine_outlines_function <- function(single_outlines_list){
 
   outlines_combined <- Momocs::combine(single_outlines_list[[1]], single_outlines_list[[2]])
 
