@@ -41,7 +41,7 @@ outlines_combined <- combine_outlines_function(single_outlines_list = single_out
 4. Inspect your outlines.
 ```
 length(outlines_combined) #how many outlines do you have?
-Momocs::stack(outlines_combined) # shows all outlines above one another(you might want to center and scale them first using Momocs)
+stack(outlines_combined) # shows all outlines above one another(you might want to center and scale them first using Momocs)
 Momocs::panel(outlines_combined) # shows all outlines next to each other
 Momocs::inspect(outlines_combined) # shows only a single outline at a time. 
 ```
