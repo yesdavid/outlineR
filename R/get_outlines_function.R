@@ -5,7 +5,7 @@
 #' @return Returns a Momocs Out file containing the outlines' coordinates with their associated IDs, derived from the file name.
 #'
 #' @export
-get_outlines_function <- function(pathname_output) {
+get_outlines <- function(pathname_output) {
   artefact_names <- list.files(pathname_output,
     pattern = ".jpg",
     full.names = F
