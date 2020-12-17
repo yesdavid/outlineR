@@ -1,10 +1,8 @@
-#' A function to create open outlines from closed outlines. The way it is implemented, the open outline will start at the highest, left-most coordinate, run clock-wise, and will end at the lowest, left-most coordinate.
+#' A function to separate single artefacts from an image containing multiple artefacts.
 #'
-#' @param single_outlines_list A Momocs Out file containing closed outlines.
-#' @param return_combined_outlines (default = TRUE) A logical parameter stating wether to output a Momocs Opn-file, or a list of coordinate matrices of each open outline.
+#' @param pathname_input Pathname to the folder containing the JPEG images with multiple artefacts on it.
+#' @param pathname_output Pathname to the folder where the JPEGs of the singled-out artefacts from this function should be stored.
 #' @return If return_combined_outlines = TRUE, returns the combined Coo objects in a single Opn file. If return_combined_outlines = FALSE, returns a list of coordinate matrices of each open outline.
-#' @examples
-#' separate_single_artefacts_function(pathname_input = "path/to/input_files", pathname_output = "path/to/output_files")
 
 
 

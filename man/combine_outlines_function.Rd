@@ -15,6 +15,3 @@ Returns the combined Coo objects in a single Out/Opn file
 \description{
 A function containing a recursive loop to combine a list of single outline coordinate-sets into a single Momocs::Out/Opn file
 }
-\examples{
-combine_outlines_function(single_outlines_list = single_outlines_list)
-}

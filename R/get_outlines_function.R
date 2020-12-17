@@ -1,8 +1,6 @@
 #' Uses Momocs::import_jpg1() to import outline coordinates from the single .jpg files which are either already avaiable, or were created using the separate_single_artefacts_function function. This function preserves the filenames.
 #' @param pathname_output The path to the single .jpg files of the artefacts from which the outlines should be derived (as for example created in the separate_single_artefacts_function function).
 #' @return Returns a Momocs Out file containing the outlines' coordinates with their associated IDs, derived from the file name.
-#' @examples
-#' get_outlines_function(pathname_output = pathname_output)
 
 
 

@@ -2,8 +2,6 @@
 #'
 #' @param single_outlines_list A list containing separate coordinate matrices (Momocs' Coo objects) as for example created with the "separate_single_artefacts_function" function.
 #' @return Returns the combined Coo objects in a single Out/Opn file
-#' @examples
-#' combine_outlines_function(single_outlines_list = single_outlines_list)
 
 
 combine_outlines_function <- function(single_outlines_list){

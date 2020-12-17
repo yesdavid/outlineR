@@ -15,6 +15,3 @@ Returns a Momocs Out file containing the outlines' coordinates with their associ
 \description{
 Uses Momocs::import_jpg1() to import outline coordinates from the single .jpg files which are either already avaiable, or were created using the separate_single_artefacts_function function. This function preserves the filenames.
 }
-\examples{
-get_outlines_function(pathname_output = pathname_output)
-}

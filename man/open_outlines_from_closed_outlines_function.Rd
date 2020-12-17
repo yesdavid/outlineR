@@ -10,16 +10,13 @@ open_outlines_from_closed_outlines_function(
 )
 }
 \arguments{
-\item{return_combined_outlines}{(default = TRUE) A logical parameter stating wether to output a Momocs Opn-file, or a list of coordinate matrices of each open outline.}
+\item{outlines_combined}{A Momocs Out file containing closed outlines.}
 
-\item{single_outlines_list}{A Momocs Out file containing closed outlines.}
+\item{return_combined_outlines}{(default = TRUE) A logical parameter stating wether to output a Momocs Opn-file, or a list of coordinate matrices of each open outline.}
 }
 \value{
 If return_combined_outlines = TRUE, returns the combined Coo objects in a single Opn file. If return_combined_outlines = FALSE, returns a list of coordinate matrices of each open outline.
 }
 \description{
 A function to create open outlines from closed outlines. The way it is implemented, the open outline will start at the highest, left-most coordinate, run clock-wise, and will end at the lowest, left-most coordinate.
-}
-\examples{
-open_outlines_from_closed_outlines_function(outlines_combined = outlines_combined, return_combined_outlines = TRUE)
 }

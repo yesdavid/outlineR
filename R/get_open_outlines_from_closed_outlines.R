@@ -1,10 +1,8 @@
 #' A function to create open outlines from closed outlines. The way it is implemented, the open outline will start at the highest, left-most coordinate, run clock-wise, and will end at the lowest, left-most coordinate.
 #'
-#' @param single_outlines_list A Momocs Out file containing closed outlines.
+#' @param outlines_combined A Momocs Out file containing closed outlines.
 #' @param return_combined_outlines (default = TRUE) A logical parameter stating wether to output a Momocs Opn-file, or a list of coordinate matrices of each open outline.
 #' @return If return_combined_outlines = TRUE, returns the combined Coo objects in a single Opn file. If return_combined_outlines = FALSE, returns a list of coordinate matrices of each open outline.
-#' @examples
-#' open_outlines_from_closed_outlines_function(outlines_combined = outlines_combined, return_combined_outlines = TRUE)
 
 
 
@@ -50,7 +48,7 @@ open_outlines_from_closed_outlines_function <- function(outlines_combined, retur
 
 
   if(return_combined_outlines == TRUE){
-    return(combine_outlines_function(open_outlines_list))
+    return(outlineR::combine_outlines_function(open_outlines_list))
   } else {
     return(open_outlines_list)
   }
