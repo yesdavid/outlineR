@@ -16,7 +16,7 @@ get_outlines_function <- function(pathname_output){
   for (input_counter in 1:length(artefact_names)){
 
     # per Momocs werden die outlines eines jpgs geladen
-    outline_coordinates <- Momocs::import_jpg1(paste0(pathname_output, artefact_names[input_counter]))
+    outline_coordinates <- Momocs::import_jpg1(paste0(pathname_output,"/", artefact_names[input_counter]))
     out_file_single_outline <- Momocs::Out(outline_coordinates) # In Momocs, Out-classes objects are lists of closed outlines, with optional components, and on which generic methods such as plotting methods (e.g. stack) and specific methods (e.g. efourier can be applied. Out objects are primarily Coo objects.
     # Momocs::inspect(out_file_single_outline)
 
