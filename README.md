@@ -1,12 +1,16 @@
 # outlineR
 
+This package is basically just a helpful wrapper around functions from mainly the Momocs (Bonhomme et al. 2014), EBImage (Pau et al. 2010), and imager (Barthelme et al. 2020) packages. It is designed for the fast and easy extraction of single outline shapes from, for example, stone tools from images containing multiple artefacts, such as the ones present in archaeological publications.
+
 
 ## Example
 
 ```
-pathname_input <- "./2_data/raw_data/Points" # where the images containing multiple artefacts are right now
+# Define where the images containing multiple artefacts are right now.
+pathname_input <- "./2_data/raw_data/Points" 
 
-pathname_output <- "./2_data/derived_data/" # where the separate images should be saved
+# Define where the separate images should be saved.
+pathname_output <- "./2_data/derived_data/" 
 ```
 
 1. Separate single artefacts/barbs from picture with multiple artefacts/barbs on one image.
@@ -30,8 +34,20 @@ combine_outlines_function(single_outlines_list = single_outlines_list)
 4. Inspect your outlines.
 ```
 length(outlines_combined) #how many outlines do you have?
-Momocs::stack(outlines_combined) # shows all outlines above one another
+Momocs::stack(outlines_combined) # shows all outlines above one another(you might want to center and scale them first using Momocs)
 Momocs::panel(outlines_combined) # shows all outlines next to each other
-Momocs::inspect(outlines_combined) # shows only a single outline at a time. press enter to see the next one, press escape to quit the "viewing mode"
+Momocs::inspect(outlines_combined) # shows only a single outline at a time. 
 ```
+
+
+
+## References
+
+__Barthelme et al. 2020__: Barthelme, S., Tschumperle, D., Wijffels, J., Assemlal, H. E., & Ochi, S. (2020). imager: Image Processing Library Based on “CImg” (0.42.3) [Computer software]. https://CRAN.R-project.org/package=imager
+__Bonhomme et al. 2014__: Bonhomme, V., Picq, S., Gaucherel, C., & Claude, J. (2014). Momocs: Outline Analysis Using R. Journal of Statistical Software, 56(13). https://doi.org/10.18637/jss.v056.i13
+__Pau et al. 2010__: Pau, G., Fuchs, F., Sklyar, O., Boutros, M., & Huber, W. (2010). EBImage—An R package for image processing with applications to cellular phenotypes. Bioinformatics, 26(7), 979–981. https://doi.org/10.1093/bioinformatics/btq046
+
+
+
+
 
