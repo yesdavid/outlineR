@@ -6,7 +6,7 @@ This package is basically just a helpful wrapper around functions from mainly th
 ## Installation
 
 ```
-devtools::install_github("yesdavid/outlineR", dependencies = TRUE)
+remotes::install_github("yesdavid/outlineR")
 ```
 
 

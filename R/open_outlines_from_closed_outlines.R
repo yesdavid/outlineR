@@ -56,7 +56,7 @@ open_outlines_from_closed_outlines <- function(outlines_combined, return_combine
 
 
   if (return_combined_outlines == TRUE) {
-    return(outlineR::combine_outlines_function(open_outlines_list))
+    return(combine_outlines(open_outlines_list))
   } else {
     return(open_outlines_list)
   }

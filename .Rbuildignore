@@ -1,2 +1,4 @@
 ^outlineR\.Rproj$
 ^\.Rproj\.user$
+^\./test_data$
+^test_data$
