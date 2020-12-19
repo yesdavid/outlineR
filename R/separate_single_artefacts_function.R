@@ -3,9 +3,9 @@
 #' A function to separate single artefacts from an image containing
 #' multiple artefacts.
 #'
-#' @param pathname_input Pathname to the folder containing the JPEG
+#' @param inpath Pathname to the folder containing the JPEG
 #' images with multiple artefacts on it.
-#' @param pathname_output Pathname to the folder where the JPEGs of
+#' @param outpath Pathname to the folder where the JPEGs of
 #' the singled-out artefacts from this function should be stored.
 #'
 #' @return If return_combined_outlines = TRUE, returns the combined
@@ -13,14 +13,14 @@
 #' returns a list of coordinate matrices of each open outline.
 #'
 #' @export
-separate_single_artefacts <- function(pathname_input, pathname_output) {
+separate_single_artefacts <- function(inpath, outpath) {
 
-  files_to_use_names <- list.files(pathname_input, full.names = FALSE)
-  pathname_input <- list.files(pathname_input, full.names = TRUE)
+  files_to_use_names <- list.files(inpath, full.names = FALSE)
+  inpath <- list.files(inpath, full.names = TRUE)
 
-  pb <- utils::txtProgressBar(min = 0, max = length(pathname_input), style = 3)
-  for (current_masked_file in 1:length(pathname_input)) {
-    x_raw <- imager::load.image(pathname_input[current_masked_file])
+  pb <- utils::txtProgressBar(min = 0, max = length(inpath), style = 3)
+  for (current_masked_file in 1:length(inpath)) {
+    x_raw <- imager::load.image(inpath[current_masked_file])
 
     x_grayscale <- imager::grayscale(x_raw)
 
@@ -67,7 +67,7 @@ separate_single_artefacts <- function(pathname_input, pathname_output) {
       # save it as .jpg with a pseudo-number (does not represent the number which the artefact might have on the page)
       EBImage::writeImage(
         current_object_inverted,
-        file.path(pathname_output,
+        file.path(outpath,
                   strsplit(files_to_use_names[current_masked_file], split = "[.]")[[1]][1],
                   "_pseudo_no_",
                   object_counter,

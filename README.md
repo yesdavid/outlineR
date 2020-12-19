@@ -14,23 +14,23 @@ remotes::install_github("yesdavid/outlineR")
 
 ```
 # Define where the images containing multiple artefacts are right now.
-pathname_input <- "./2_data/raw_data" 
+inpath <- "./2_data/raw_data" 
 
 # Define where the separate images should be saved.
-pathname_output <- "./2_data/derived_data" 
+outpath <- "./2_data/derived_data" 
 ```
 
 1. Separate single artefacts/barbs from picture with multiple artefacts/barbs on one image.
 ```
-separate_single_artefacts(pathname_input = pathname_input, 
-                          pathname_output = pathname_output)
+separate_single_artefacts(inpath = inpath, 
+                          outpath = outpath)
 ```
-Afterwards, the JPEGs of the single artefacts should be saved in the folder which you defined under `pathname_output`. If there is just plain white images in your `pathname_output` folder, re-check the images you prepared in "pathname_input" for single outlier pixels or open outlines. If necessary, delete all JPEGS in `pathname_output`. Then, re-run this command.
+Afterwards, the JPEGs of the single artefacts should be saved in the folder which you defined under `outpath`. If there is just plain white images in your `outpath` folder, re-check the images you prepared in "inpath" for single outlier pixels or open outlines. If necessary, delete all JPEGS in `outpath`. Then, re-run this command.
 
 
 2. Use Momocs' function import_jpg() to get the outlines of the images, while at the same time preserving the images name. This function only needs the files in your `output_path_name` folder, so you do not (necesarrily) have to run all of the code above again. 
 ```
-single_outlines_list <- get_outlines(pathname_output = pathname_output)
+single_outlines_list <- get_outlines(outpath = outpath)
 ```
 
 3. Combine all outlines into a common file.

@@ -5,12 +5,12 @@
 #' separate_single_artefacts_function function. This function preserves the
 #' filenames.
 #'
-#' @param pathname_output The path to the single .jpg files of the artefacts
+#' @param outpath The path to the single .jpg files of the artefacts
 #' from which the outlines should be derived (as for example created in the
 #' separate_single_artefacts_function function).
 #'
 #' @param tps_file_rescale (Default = NULL) A dataframe containing at least a column _IMAGE_ and a column _SCALE_.
-#' _IMAGE_ contains the names of the images, as they are written in *pathname_input*.
+#' _IMAGE_ contains the names of the images, as they are written in *inpath*.
 #' _SCALE_ contains the scaling factor from pixel to a metric measurement.
 #' Such a file can be created in i.e. tpsDIG2 (Rohlf 2017).
 #'
@@ -18,8 +18,8 @@
 #' with their associated IDs, derived from the file name.
 #'
 #' @export
-get_outlines <- function(pathname_output, tps_file_rescale = NULL) {
-  artefact_names <- list.files(pathname_output,
+get_outlines <- function(outpath, tps_file_rescale = NULL) {
+  artefact_names <- list.files(outpath,
     pattern = ".jpg",
     full.names = F
   )
@@ -29,7 +29,7 @@ get_outlines <- function(pathname_output, tps_file_rescale = NULL) {
   pb2 <- utils::txtProgressBar(min = 0, max = length(artefact_names), style = 3)
   for (input_counter in 1:length(artefact_names)) {
 
-    outline_coordinates <- Momocs::import_jpg(file.path(pathname_output, artefact_names[input_counter]))
+    outline_coordinates <- Momocs::import_jpg(file.path(outpath, artefact_names[input_counter]))
     out_file_single_outline <- Momocs::Out(outline_coordinates)
 
     if (!is.null(tps_file_rescale)) {
