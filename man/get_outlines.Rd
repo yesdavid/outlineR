@@ -4,19 +4,24 @@
 \alias{get_outlines}
 \title{get_outlines}
 \usage{
-get_outlines(pathname_output)
+get_outlines(pathname_output, tps_file_rescale = NULL)
 }
 \arguments{
 \item{pathname_output}{The path to the single .jpg files of the artefacts
 from which the outlines should be derived (as for example created in the
 separate_single_artefacts_function function).}
+
+\item{tps_file_rescale}{(Default = NULL) A dataframe containing at least a column \emph{IMAGE} and a column \emph{SCALE}.
+\emph{IMAGE} contains the names of the images, as they are written in \emph{pathname_input}.
+\emph{SCALE} contains the scaling factor from pixel to a metric measurement.
+Such a file can be created in i.e. tpsDIG2 (Rohlf 2017).}
 }
 \value{
 Returns a Momocs Out file containing the outlines' coordinates
 with their associated IDs, derived from the file name.
 }
 \description{
-Uses Momocs::import_jpg1() to import outline coordinates from the single
+Uses Momocs::import_jpg() to import outline coordinates from the single
 .jpg files which are either already avaiable, or were created using the
 separate_single_artefacts_function function. This function preserves the
 filenames.
