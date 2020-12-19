@@ -1,5 +1,5 @@
 Package: outlineR
-Title: A Package to Derive Outline Shapes from (multiple) Artefacts on JPEG Images 
+Title: A package to derive outline shapes from (multiple) artefacts on JPEG images 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "David Nicolas",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "matzigdavid@gmail.com",
            comment = c(ORCID = "0000-0001-7349-5401"))
-Description: A package to create derive outline shapes from (multiple) artefacts on images.
+Description: A package to derive outline shapes from (multiple) artefacts on JPEG images.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -17,7 +17,6 @@ Imports:
     EBImage,
     imager,
     Momocs,
-    testit,
     utils
 Remotes: bioc::release/EBImage
 SystemRequirements: fftw3
