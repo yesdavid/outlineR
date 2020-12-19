@@ -68,10 +68,10 @@ separate_single_artefacts <- function(inpath, outpath) {
       EBImage::writeImage(
         current_object_inverted,
         file.path(outpath,
-                  strsplit(files_to_use_names[current_masked_file], split = "[.]")[[1]][1],
-                  "_pseudo_no_",
-                  object_counter,
-                  ".jpg")
+                  paste0(strsplit(files_to_use_names[current_masked_file], split = "[.]")[[1]][1],
+                         "_pseudo_no_",
+                         object_counter,
+                         ".jpg"))
       )
     }
 
