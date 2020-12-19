@@ -3,7 +3,7 @@
 This package is a helpful wrapper around functions from mainly the __Momocs__ (Bonhomme et al. 2014), __EBImage__ (Pau et al. 2010), and __imager__ (Barthelme et al. 2020) packages. It is designed for the fast and easy extraction of single outline shapes of, for example, stone tools from images containing multiple thereof, such as the ones present in archaeological publications.
 
 
-## Installation
+## Installation   
 
 ```
 remotes::install_github("yesdavid/outlineR")
@@ -28,7 +28,7 @@ separate_single_artefacts(pathname_input = pathname_input,
 Afterwards, the JPEGs of the single artefacts should be saved in the folder which you defined under `pathname_output`. If there is just plain white images in your `pathname_output` folder, re-check the images you prepared in "pathname_input" for single outlier pixels or open outlines. If necessary, delete all JPEGS in `pathname_output`. Then, re-run this command.
 
 
-2. Use Momocs' function import_jpg1() to get the outlines of the images. This function only needs the files in your `output_path_name` folder, so you do not (necesarrily) have to run all of the code above again.
+2. Use Momocs' function import_jpg() to get the outlines of the images, while at the same time preserving the images name. This function only needs the files in your `output_path_name` folder, so you do not (necesarrily) have to run all of the code above again. 
 ```
 single_outlines_list <- get_outlines(pathname_output = pathname_output)
 ```
