@@ -4,13 +4,13 @@
 \alias{separate_single_artefacts}
 \title{separate_single_artefacts}
 \usage{
-separate_single_artefacts(pathname_input, pathname_output)
+separate_single_artefacts(inpath, outpath)
 }
 \arguments{
-\item{pathname_input}{Pathname to the folder containing the JPEG
+\item{inpath}{Pathname to the folder containing the JPEG
 images with multiple artefacts on it.}
 
-\item{pathname_output}{Pathname to the folder where the JPEGs of
+\item{outpath}{Pathname to the folder where the JPEGs of
 the singled-out artefacts from this function should be stored.}
 }
 \value{

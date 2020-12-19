@@ -4,15 +4,16 @@
 \alias{get_outlines}
 \title{get_outlines}
 \usage{
-get_outlines(pathname_output, tps_file_rescale = NULL)
+get_outlines(outpath, tps_file_rescale = NULL)
 }
 \arguments{
-\item{pathname_output}{The path to the single .jpg files of the artefacts
+\item{outpath}{The path to the single .jpg files of the artefacts
 from which the outlines should be derived (as for example created in the
 separate_single_artefacts_function function).}
 
 \item{tps_file_rescale}{(Default = NULL) A dataframe containing at least a column \emph{IMAGE} and a column \emph{SCALE}.
-\emph{IMAGE} contains the names of the images, as they are written in \emph{pathname_input}.
+This dataframe is internally created using the function \emph{tps_to_df} (for more information see ?tps_to_df()).
+\emph{IMAGE} contains the names of the images, as they are written in \emph{inpath}.
 \emph{SCALE} contains the scaling factor from pixel to a metric measurement.
 Such a file can be created in i.e. tpsDIG2 (Rohlf 2017).}
 }
