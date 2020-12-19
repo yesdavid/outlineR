@@ -37,7 +37,7 @@ Afterwards, the JPEGs of the single artefacts should be saved in the folder whic
 
 2. Use Momocs' function import_jpg() to get the outlines of the images, while at the same time preserving the images name. This function only needs the files in your `output_path_name` folder, so you do not (necesarrily) have to run all of the code above again. If the pathname to a .tps file containing a scaling factor/scaling factors is provided to *tps_file_rescale*, the outlines will get scaled accordingly.
 ```
-single_outlines_list <- get_outlines(outpath = outpath)
+single_outlines_list <- get_outlines(outpath = outpath, tps_file_rescale = NULL)
 ```
 
 3. Combine all outlines into a common file.
