@@ -9,6 +9,13 @@ This package is a helpful wrapper around functions from mainly the __Momocs__ (B
 remotes::install_github("yesdavid/outlineR")
 ```
 
+## Workflow
+
+![Raw data as it can be found in archaeological publications. Here: Morar Quartz Industry. Credit: [Wellcome Collection](https://wellcomecollection.org/works/th7egtfj). Attribution 4.0 International (CC BY 4.0)]("./test_data/raw_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg")
+
+
+![Prepared image (cleaned and thresholded in GIMP).]("./test_data/input_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg")
+
 
 ## Example
 
@@ -28,7 +35,7 @@ separate_single_artefacts(inpath = inpath,
 Afterwards, the JPEGs of the single artefacts should be saved in the folder which you defined under `outpath`. If there is just plain white images in your `outpath` folder, re-check the images you prepared in "inpath" for single outlier pixels or open outlines. If necessary, delete all JPEGS in `outpath`. Then, re-run this command.
 
 
-2. Use Momocs' function import_jpg() to get the outlines of the images, while at the same time preserving the images name. This function only needs the files in your `output_path_name` folder, so you do not (necesarrily) have to run all of the code above again. 
+2. Use Momocs' function import_jpg() to get the outlines of the images, while at the same time preserving the images name. This function only needs the files in your `output_path_name` folder, so you do not (necesarrily) have to run all of the code above again. If the pathname to a .tps file containing a scaling factor/scaling factors is provided to *tps_file_rescale*, the outlines will get scaled accordingly.
 ```
 single_outlines_list <- get_outlines(outpath = outpath)
 ```
