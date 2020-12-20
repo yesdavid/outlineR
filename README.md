@@ -13,6 +13,8 @@ remotes::install_github("yesdavid/outlineR")
 
 ### Raw data
 
+The raw data should have a sufficiently high resolution.
+
 <figure>
 <img src="https://iiif.wellcomecollection.org/image/M0010930.jpg/full/full/0/default.jpg"/>
 <figcaption>
@@ -21,15 +23,22 @@ Raw data (here: Morar Quartz Industry) as it can be found in archaeological publ
 </figcaption>
 </figure>
 
+
 ### Manual image preparation
 
+The raw images have to be converted to JPEG format and manually prepared in a image manipulation software. Numberings, descriptions, etc. (everything we do not want an outline of) have to be removed by hand. If the image is a picture taken of the artefacts, make sure to remove any cast shadows. 
+
+With the images cleaned, they now have to be thresholed/binarized[^1]. If not, the binarization happens inside the outlineR-package. However, it is not very robust and I advise you to do it manually beforehand.
+
+[^1]: In GIMP2, images can be thresholded/biarized under "_Colors_" -> "_Thresholding..._"
 
 <figure>
 <img src="./test_data/input_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg"/>
 <figcaption>
-Manually prepared image with numberings etc. removed and thresholded using <a href="https://www.gimp.org/">GIMP</a>. It is suited to be used as input file for the *outlineR* package and should therefore be saved in the `inpath`-folder (see below).
+Manually prepared JPEG image with numberings etc. removed and thresholded using <a href="https://www.gimp.org/">GIMP</a>. It is suited to be used as input file for the `separate_single_artefacts` function and should therefore be saved in the `inpath`-folder (see below).
 </figcaption>
 </figure>
+
 
 ### outlineR application
 
