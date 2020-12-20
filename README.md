@@ -15,6 +15,9 @@ remotes::install_github("yesdavid/outlineR")
 
 The raw data should have a sufficiently high resolution.
 
+<table style="width:100%">
+<tr>
+<th>
 <figure>
 <img src="https://iiif.wellcomecollection.org/image/M0010930.jpg/full/full/0/default.jpg"/>
 <figcaption>
@@ -22,23 +25,30 @@ Raw data (here: Morar Quartz Industry) as it can be found in archaeological publ
 <a href="https://wellcomecollection.org/works/th7egtfj">Wellcome Collection</a> (CC BY 4.0).
 </figcaption>
 </figure>
-
+</th>
+<tr>
+</table>
 
 ### Manual image preparation
 
-The raw images have to be converted to JPEG format and manually prepared in a image manipulation software. Numberings, descriptions, etc. (everything we do not want an outline of) have to be removed by hand. If the image is a picture taken of the artefacts, make sure to remove any cast shadows. 
+The raw images have to be converted to JPEG format and manually prepared in an image manipulation software. Numberings, descriptions, etc. (everything we do not want an outline of) have to be removed by hand. If the image is a picture taken of the artefacts, make sure to remove any cast shadows. 
 
 With the images cleaned, they now have to be thresholed/binarized[^1]. If not, the binarization happens inside the outlineR-package. However, it is not very robust and I advise you to do it manually beforehand.
 
 [^1]: In GIMP2, images can be thresholded/biarized under "_Colors_" -> "_Thresholding..._"
 
+<table style="width:100%">
+<tr>
+<th>
 <figure>
 <img src="./test_data/input_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg"/>
 <figcaption>
 Manually prepared JPEG image with numberings etc. removed and thresholded using <a href="https://www.gimp.org/">GIMP</a>. It is suited to be used as input file for the `separate_single_artefacts` function and should therefore be saved in the `inpath`-folder (see below).
 </figcaption>
 </figure>
-
+</th>
+<tr>
+</table>
 
 ### outlineR application
 
@@ -65,12 +75,19 @@ separate_single_artefacts(inpath = inpath,
 
 Afterwards, the JPEGs of the single artefacts should be saved in the folder which you defined under `outpath`. If there is just plain white images in your `outpath` folder, re-check the images you prepared in `inpath` for single outlier pixels or open outlines. If necessary, delete all JPEGS in `outpath`. Then, re-run this command.
 
+<table style="width:100%">
+<tr>
+<th>
 <figure>
 <img src="./test_data/screenshot_derived_data.png"/>
 <figcaption>
 The single, separated artefacts from our input file generated using `separate_single_artefacts`, now located in `outpath`.
 </figcaption>
 </figure>
+</th>
+<tr>
+</table>
+
 
 ####  3. Outline extraction
 
