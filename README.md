@@ -5,47 +5,82 @@ This package is a helpful wrapper around functions from mainly the __Momocs__ (B
 
 ## Installation   
 
-```
+``` 
 remotes::install_github("yesdavid/outlineR")
 ```
 
 ## Workflow
 
-![Raw data as it can be found in archaeological publications. Here: Morar Quartz Industry. Credit: [Wellcome Collection](https://wellcomecollection.org/works/th7egtfj). Attribution 4.0 International (CC BY 4.0)]("./test_data/raw_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg")
+### Raw data
+
+<figure>
+<img src="https://iiif.wellcomecollection.org/image/M0010930.jpg/full/full/0/default.jpg"/>
+<figcaption>
+Raw data as it can be found in archaeological publications. Here: Morar Quartz Industry. Credit: 
+<a href="https://wellcomecollection.org/works/th7egtfj">Wellcome Collection (CC BY 4.0)</a>
+</figcaption>
+</figure>
+
+### Manual image preparation
 
 
-![Prepared image (cleaned and thresholded in GIMP).]("./test_data/input_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg")
+<figure>
+<img src="./test_data/input_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg"/>
+<figcaption>
+Manually prepared image with numberings etc. removed and thresholded using [GIMP](https://www.gimp.org/). It is suited to be used as input file for the _outlineR_ package and should therefore be saved in the `inpath`-folder (see below).
+</figcaption>
+</figure>
 
+### outlineR application
 
-## Example
+#### 1. Path settings
 
+We define `inpath` as the pathname to out manually prepared image (see above). `outpath` defines the path to an empty folder where all prepared and singled-out artefacts should be saved to.
 ```
+# For example:
 # Define where the images containing multiple artefacts are right now.
-inpath <- "./2_data/raw_data" 
+inpath <- "./test_data/input_data" 
 
 # Define where the separate images should be saved.
-outpath <- "./2_data/derived_data" 
+outpath <- "./test_data/derived_data" 
 ```
 
-1. Separate single artefacts/barbs from picture with multiple artefacts/barbs on one image.
+#### 2. Separation of single artefacts
+
+`separate_single_artefacts` separates single artefacts from pictures with multiple artefacts on it.
+
 ```
 separate_single_artefacts(inpath = inpath, 
                           outpath = outpath)
 ```
-Afterwards, the JPEGs of the single artefacts should be saved in the folder which you defined under `outpath`. If there is just plain white images in your `outpath` folder, re-check the images you prepared in "inpath" for single outlier pixels or open outlines. If necessary, delete all JPEGS in `outpath`. Then, re-run this command.
 
+Afterwards, the JPEGs of the single artefacts should be saved in the folder which you defined under `outpath`. If there is just plain white images in your `outpath` folder, re-check the images you prepared in `inpath` for single outlier pixels or open outlines. If necessary, delete all JPEGS in `outpath`. Then, re-run this command.
 
-2. Use Momocs' function import_jpg() to get the outlines of the images, while at the same time preserving the images name. This function only needs the files in your `output_path_name` folder, so you do not (necesarrily) have to run all of the code above again. If the pathname to a .tps file containing a scaling factor/scaling factors is provided to *tps_file_rescale*, the outlines will get scaled accordingly.
+<figure>
+<img src="./test_data/screenshot_derived_data.png"/>
+<figcaption>
+The single, separated artefacts from our input file generated using `separate_single_artefacts`.
+</figcaption>
+</figure>
+
+####  3. Outline extraction
+
+Using Momocs' function import_jpg(), this function extracts the outlines of the images, while at the same time preserving the images' names. This function only needs the files in your `outpath` folder, so you do not (necessarily) have to run all of the code above again. If the pathname to a .tps file containing a scaling factor is provided to `tps_file_rescale`, the outlines will get scaled accordingly.
+
 ```
 single_outlines_list <- get_outlines(outpath = outpath, tps_file_rescale = NULL)
 ```
 
-3. Combine all outlines into a common file.
-```
+####  4. Outline combination
+
+The list of single outlines is combined into a single Out/Opn (Momocs) file.
+``` 
 outlines_combined <- combine_outlines(single_outlines_list = single_outlines_list)
 ```
 
-4. Inspect your outlines.
+#### 5. Outline inspection
+
+In a last step before starting to work with your outlines, you should inspect the just created outlines for validity and possible errors.
 ```
 length(outlines_combined) #how many outlines do you have?
 stack(outlines_combined) # shows all outlines above one another(you might want to center and scale them first using Momocs)
@@ -53,7 +88,27 @@ Momocs::panel(outlines_combined) # shows all outlines next to each other
 Momocs::inspect(outlines_combined) # shows only a single outline at a time. 
 ```
 
+<table style="width:100%">
+<tr>
+<th>
+<figure>
+<img src="./test_data/stack_outlines_combined.jpeg"/>
+<figcaption>
+Stacked outlines.
+</figcaption>
+</figure>
 
+</th>
+<th>
+<figure>
+<img src="./test_data/panel_outlines_combined.jpeg" />
+<figcaption>
+Panel of outlines.
+</figcaption>
+</figure>
+</th>
+<tr>
+</table>
 
 ## References
 
