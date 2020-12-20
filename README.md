@@ -16,8 +16,8 @@ remotes::install_github("yesdavid/outlineR")
 <figure>
 <img src="https://iiif.wellcomecollection.org/image/M0010930.jpg/full/full/0/default.jpg"/>
 <figcaption>
-Raw data as it can be found in archaeological publications. Here: Morar Quartz Industry. Credit: 
-<a href="https://wellcomecollection.org/works/th7egtfj">Wellcome Collection (CC BY 4.0)</a>
+Raw data (here: Morar Quartz Industry) as it can be found in archaeological publications. Credit: 
+<a href="https://wellcomecollection.org/works/th7egtfj">Wellcome Collection</a> (CC BY 4.0).
 </figcaption>
 </figure>
 
@@ -27,7 +27,7 @@ Raw data as it can be found in archaeological publications. Here: Morar Quartz I
 <figure>
 <img src="./test_data/input_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg"/>
 <figcaption>
-Manually prepared image with numberings etc. removed and thresholded using [GIMP](https://www.gimp.org/). It is suited to be used as input file for the _outlineR_ package and should therefore be saved in the `inpath`-folder (see below).
+Manually prepared image with numberings etc. removed and thresholded using ![GIMP](https://www.gimp.org/). It is suited to be used as input file for the *outlineR* package and should therefore be saved in the `inpath`-folder (see below).
 </figcaption>
 </figure>
 
@@ -59,13 +59,13 @@ Afterwards, the JPEGs of the single artefacts should be saved in the folder whic
 <figure>
 <img src="./test_data/screenshot_derived_data.png"/>
 <figcaption>
-The single, separated artefacts from our input file generated using `separate_single_artefacts`.
+The single, separated artefacts from our input file generated using `separate_single_artefacts`, now located in `outpath`.
 </figcaption>
 </figure>
 
 ####  3. Outline extraction
 
-Using Momocs' function import_jpg(), this function extracts the outlines of the images, while at the same time preserving the images' names. This function only needs the files in your `outpath` folder, so you do not (necessarily) have to run all of the code above again. If the pathname to a .tps file containing a scaling factor is provided to `tps_file_rescale`, the outlines will get scaled accordingly.
+Using `Momocs::import_jpg()`, this function extracts the outlines of the images, while at the same time preserving the images' names. This function only needs the files in your `outpath` folder, so you do not (necessarily) have to run all of the code above again. If the pathname to a .tps file containing a scaling factor is provided to `tps_file_rescale`, the outlines will get scaled accordingly.
 
 ```
 single_outlines_list <- get_outlines(outpath = outpath, tps_file_rescale = NULL)
