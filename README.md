@@ -27,7 +27,7 @@ Raw data (here: Morar Quartz Industry) as it can be found in archaeological publ
 <figure>
 <img src="./test_data/input_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg"/>
 <figcaption>
-Manually prepared image with numberings etc. removed and thresholded using ![GIMP](https://www.gimp.org/). It is suited to be used as input file for the *outlineR* package and should therefore be saved in the `inpath`-folder (see below).
+Manually prepared image with numberings etc. removed and thresholded using <a href="https://www.gimp.org/">GIMP</a>. It is suited to be used as input file for the *outlineR* package and should therefore be saved in the `inpath`-folder (see below).
 </figcaption>
 </figure>
 
