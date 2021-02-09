@@ -2,12 +2,12 @@
 #'
 #' Uses Momocs::import_jpg() to import outline coordinates from the single
 #' .jpg files which are either already avaiable, or were created using the
-#' separate_single_artefacts_function function. This function preserves the
+#' separate_single_artefacts function. This function preserves the
 #' filenames.
 #'
 #' @param outpath The path to the single .jpg files of the artefacts
 #' from which the outlines should be derived (as for example created in the
-#' separate_single_artefacts_function function).
+#' separate_single_artefacts function).
 #'
 #' @param tps_file_rescale (Default = NULL) A dataframe containing at least a column _IMAGE_ and a column _SCALE_.
 #' This dataframe is internally created using the function *tps_to_df* (for more information see ?tps_to_df()).
@@ -18,12 +18,16 @@
 #' @return Returns a Momocs Out file containing the outlines' coordinates
 #' with their associated IDs, derived from the file name.
 #'
-#' @example get_outlines(outpath = pathname_output, tps_file_rescale = "./test_data/tps_file.tps")
+#'
+#' @example
+#' \dontrun{
+#' get_outlines(outpath = pathname_output, tps_file_rescale = "./test_data/tps_file.tps")
+#'}
 #'
 #' @export
 get_outlines <- function(outpath, tps_file_rescale = NULL) {
   artefact_names <- list.files(outpath,
-    pattern = ".jpg",
+    pattern = c(".jpg", ".jpeg", ".JPG", ".JPEG"),
     full.names = F
   )
 
@@ -38,7 +42,7 @@ get_outlines <- function(outpath, tps_file_rescale = NULL) {
     if (!is.null(tps_file_rescale)) {
       tps_file_rescale_df <- tps_to_df(tps_file_rescale)
       # Rescale coordinates from pixels to real length units
-      current_tps_dataset <- subset(tps_file_rescale_df, IMAGE == strsplit(artefact_names[input_counter], split = "_pseudo")[[1]][1])
+      current_tps_dataset <- subset(tps_file_rescale_df, tps_file_rescale_df$IMAGE == strsplit(artefact_names[input_counter], split = "_pseudo")[[1]][1])
       # rescale using rescale factor
       out_file_single_outline <- Momocs::rescale(out_file_single_outline,
                                                  scaling_factor = current_tps_dataset$SCALE)
