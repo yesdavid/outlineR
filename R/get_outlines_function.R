@@ -21,7 +21,7 @@
 #'
 #' @example
 #' \dontrun{
-#' get_outlines(outpath = pathname_output, tps_file_rescale = "./test_data/tps_file.tps")
+#' get_outlines(outpath = pathname_output, tps_file_rescale = "./test_data/input_data/tps_file.tps")
 #'}
 #'
 #' @export
