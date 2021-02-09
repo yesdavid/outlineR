@@ -1,13 +1,13 @@
 Package: outlineR
 Title: A package to derive outline shapes from (multiple) artefacts on JPEG images 
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person(given = "David Nicolas",
            family = "Matzig",
            role = c("aut", "cre"),
            email = "matzigdavid@gmail.com",
            comment = c(ORCID = "0000-0001-7349-5401"))
-Description: A package to derive outline shapes from (multiple) artefacts on JPEG images.
+Description: This package is a helpful wrapper around functions from mainly the Momocs (Bonhomme et al. 2014), EBImage (Pau et al. 2010), and imager (Barthelme et al. 2020) packages. It is designed for the fast and easy extraction of single outline shapes of, for example, stone tools from images containing multiple thereof, such as the ones present in archaeological publications.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
