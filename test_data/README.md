@@ -11,7 +11,7 @@ Wellcome Collection (https://wellcomecollection.org/works/th7egtfj, distributed 
 
 **Morar_Quartz_Industry_Wellcome_Collection_clean.jpeg**
 
-Morar_Quartz_Industry_Wellcome_Collection_clean.jpeg is the raw "./raw_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg" image (CC BY 4.0) manually prepared in an image manipulation software. Numberings, descriptions, etc. (everything that is not an artefact) were removed by hand. The image was thresholed/binarized in GIMP2 under "_Colors_" -> "_Thresholding...".
+Morar_Quartz_Industry_Wellcome_Collection_clean.jpeg is the raw "./raw_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg" image (CC BY 4.0) manually prepared in an image manipulation software. Numberings, descriptions, etc. (everything that is not an artefact) were removed by hand. The image was thresholed/binarized in GIMP2 under "_Colors_" -> "_Thresholding..._".
 
 
 **tps_file.tps**
