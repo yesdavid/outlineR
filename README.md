@@ -41,7 +41,7 @@ With the images cleaned, they now have to be thresholed/binarized[^1]. If not, t
 <tr>
 <th>
 <figure>
-<img src="./test_data/input_data/Morar_Quartz_Industry_Wellcome_Collection.jpeg"/>
+<img src="./test_data/input_data/Morar_Quartz_Industry_Wellcome_Collection_clean.jpeg"/>
 <figcaption>
 Manually prepared JPEG image with numberings etc. removed and thresholded using <a href="https://www.gimp.org/">GIMP</a>. It is suited to be used as input file for the `separate_single_artefacts` function and should therefore be saved in the `inpath`-folder (see below).
 </figcaption>
