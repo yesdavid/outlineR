@@ -5,7 +5,7 @@
 #' separate_single_artefacts function. This function preserves the
 #' filenames.
 #'
-#' @param outpath The path to the single .jpg files of the artefacts
+#' @param outpath The path to the folder containing the .jpg files of the singled out artefacts
 #' from which the outlines should be derived (as for example created in the
 #' separate_single_artefacts function).
 #'
@@ -42,7 +42,9 @@ get_outlines <- function(outpath, tps_file_rescale = NULL) {
     if (!is.null(tps_file_rescale)) {
       tps_file_rescale_df <- tps_to_df(tps_file_rescale)
       # Rescale coordinates from pixels to real length units
-      current_tps_dataset <- subset(tps_file_rescale_df, tps_file_rescale_df$IMAGE == strsplit(artefact_names[input_counter], split = "_pseudo")[[1]][1])
+      current_tps_dataset <- subset(tps_file_rescale_df,
+                                    tps_file_rescale_df$IMAGE == strsplit(artefact_names[input_counter],
+                                                                          split = "_pseudo")[[1]][1])
       # rescale using rescale factor
       out_file_single_outline <- Momocs::rescale(out_file_single_outline,
                                                  scaling_factor = current_tps_dataset$SCALE)

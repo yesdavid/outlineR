@@ -7,9 +7,9 @@
 get_outlines(outpath, tps_file_rescale = NULL)
 }
 \arguments{
-\item{outpath}{The path to the single .jpg files of the artefacts
+\item{outpath}{The path to the folder containing the .jpg files of the singled out artefacts
 from which the outlines should be derived (as for example created in the
-separate_single_artefacts_function function).}
+separate_single_artefacts function).}
 
 \item{tps_file_rescale}{(Default = NULL) A dataframe containing at least a column \emph{IMAGE} and a column \emph{SCALE}.
 This dataframe is internally created using the function \emph{tps_to_df} (for more information see ?tps_to_df()).
@@ -24,6 +24,6 @@ with their associated IDs, derived from the file name.
 \description{
 Uses Momocs::import_jpg() to import outline coordinates from the single
 .jpg files which are either already avaiable, or were created using the
-separate_single_artefacts_function function. This function preserves the
+separate_single_artefacts function. This function preserves the
 filenames.
 }

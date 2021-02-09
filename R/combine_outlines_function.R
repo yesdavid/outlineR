@@ -5,7 +5,7 @@
 #'
 #' @param single_outlines_list A list containing separate coordinate
 #' matrices (Momocs' Coo objects) as for example created with the
-#' "separate_single_artefacts_function" function.
+#' separate_single_artefacts function.
 #'
 #' @return Returns the combined Coo objects in a single Out/Opn file
 #'

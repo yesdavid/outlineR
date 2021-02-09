@@ -9,7 +9,7 @@ combine_outlines(single_outlines_list)
 \arguments{
 \item{single_outlines_list}{A list containing separate coordinate
 matrices (Momocs' Coo objects) as for example created with the
-"separate_single_artefacts_function" function.}
+separate_single_artefacts function.}
 }
 \value{
 Returns the combined Coo objects in a single Out/Opn file
