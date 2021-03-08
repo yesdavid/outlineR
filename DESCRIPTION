@@ -1,10 +1,10 @@
 Package: outlineR
-Title: A package to derive outline shapes from (multiple) artefacts on JPEG images 
+Title: An R package to derive outline shapes from (multiple) artefacts on JPEG images 
 Version: 0.1.0
 Authors@R: 
     c(person(given = "David Nicolas",
            family = "Matzig",
-           role = c("aut", "cre"),
+           role = c("aut", "cre", "cph"),
            email = "matzigdavid@gmail.com",
            comment = c(ORCID = "0000-0001-7349-5401")),
       person(given = "Clemens",

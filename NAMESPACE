@@ -2,5 +2,6 @@
 
 export(combine_outlines)
 export(get_outlines)
+export(open_outlines_from_closed_outlines)
 export(separate_single_artefacts)
 export(tps_to_df)
