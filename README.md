@@ -53,6 +53,12 @@ Manually prepared JPEG image with numberings etc. removed and thresholded using 
 
 ### outlineR application
 
+#### 0. Load the package
+
+```
+library(outlineR)
+```
+
 #### 1. Path settings
 
 We define `inpath` as the pathname to out manually prepared image (see above). `outpath` defines the path to an empty folder where all prepared and singled-out artefacts should be saved to.
