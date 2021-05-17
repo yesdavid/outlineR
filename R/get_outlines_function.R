@@ -10,7 +10,7 @@
 #' separate_single_artefacts function).
 #'
 #' @param tps_file_rescale (Default = NULL) A dataframe containing at least a column _IMAGE_ and a column _SCALE_.
-#' This dataframe is internally created using the function *tps_to_df* (for more information see ?tps_to_df()).
+#' This dataframe has to be created first outside this function using the function *tps_to_df* (for more information see ?tps_to_df()).
 #' _IMAGE_ contains the names of the images, as they are written in *inpath*.
 #' _SCALE_ contains the scaling factor from pixel to a metric measurement.
 #' Such a file can be created in i.e. tpsDIG2 (Rohlf 2017).
@@ -40,7 +40,7 @@ get_outlines <- function(outpath, tps_file_rescale = NULL) {
     out_file_single_outline <- Momocs::Out(outline_coordinates)
 
     if (!is.null(tps_file_rescale)) {
-      tps_file_rescale_df <- tps_to_df(tps_file_rescale)
+      tps_file_rescale_df <- tps_file_rescale
       # Rescale coordinates from pixels to real length units
       current_tps_dataset <- subset(tps_file_rescale_df,
                                     tps_file_rescale_df$IMAGE == strsplit(artefact_names[input_counter],
