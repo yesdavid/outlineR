@@ -98,11 +98,20 @@ The single, separated artefacts from our input file generated using `separate_si
 
 ####  3. Outline extraction
 
-Using `Momocs::import_jpg()`, this function extracts the outlines of the images, while at the same time preserving the images' names. This function only needs the files in your `outpath` folder, so you do not (necessarily) have to run all of the code above again. If the pathname to a .tps file containing a scaling factor is provided to `tps_file_rescale`, the outlines will get scaled accordingly.
+Using `Momocs::import_jpg()`, this function extracts the outlines of the images, while at the same time preserving the images' names. This function only needs the files in your `outpath` folder, so you do not (necessarily) have to run all of the code above again.
 
 ```
 single_outlines_list <- get_outlines(outpath = outpath, tps_file_rescale = NULL)
 ```
+
+If a .tps file with scaling factor is available, it can be transformed into a dataframe using the `tps_to_df()` function and forwarded into `get_outlines()`.
+
+```
+tps_df <- tps_to_df("path/to/tps/file.tps")
+
+single_outlines_list <- get_outlines(outpath = outpath, tps_file_rescale = tps_df)
+```
+
 
 ####  4. Outline combination
 
