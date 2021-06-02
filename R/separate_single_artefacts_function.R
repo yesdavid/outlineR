@@ -15,8 +15,12 @@
 #' @export
 separate_single_artefacts <- function(inpath, outpath) {
 
-  files_to_use_names <- list.files(inpath, full.names = FALSE)
-  inpath <- list.files(inpath, full.names = TRUE)
+  files_to_use_names <- list.files(inpath,
+                                   full.names = FALSE,
+                                   pattern = "*.jpg")
+  inpath <- list.files(inpath,
+                       full.names = TRUE,
+                       pattern = "*.jpg")
 
   pb <- utils::txtProgressBar(min = 0, max = length(inpath), style = 3)
   for (current_masked_file in 1:length(inpath)) {
