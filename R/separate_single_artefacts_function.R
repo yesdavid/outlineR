@@ -17,10 +17,10 @@ separate_single_artefacts <- function(inpath, outpath) {
 
   files_to_use_names <- list.files(inpath,
                                    full.names = FALSE,
-                                   pattern = "*.jpg")
+                                   pattern = c(".jpg", ".jpeg", ".JPG", ".JPEG"))
   inpath <- list.files(inpath,
                        full.names = TRUE,
-                       pattern = "*.jpg")
+                       pattern = c(".jpg", ".jpeg", ".JPG", ".JPEG"))
 
   pb <- utils::txtProgressBar(min = 0, max = length(inpath), style = 3)
   for (current_masked_file in 1:length(inpath)) {
