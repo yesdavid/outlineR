@@ -15,25 +15,25 @@ tps_to_df <- function(tps_file_path = tps_file_path) {
   tps_file <- readChar(tps_file_path,
                        file.info(tps_file_path)$size)
 
+  split_by_image <- strsplit(tps_file, split = "IMAGE=")[[1]]
+  split_by_image <- split_by_image[2:length(split_by_image)]
 
-  tps_file_matrix <- matrix(strsplit(tps_file, split = "\r\n")[[1]], ncol = 4, byrow = TRUE)
-  tps_file_df <- as.data.frame(tps_file_matrix,
-                               stringsAsFactors = FALSE)
-  names(tps_file_df) <- c("LM", "IMAGE", "ID", "SCALE") # works of course only if there is exactly these four variables. no more no less.
+  df_list <- list()
+  for(current_img_index in 1:length(split_by_image)){
 
-  for (current_col_name in names(tps_file_df)) {
-    current_col <- unlist(strsplit(tps_file_df[,current_col_name], split = paste0(current_col_name, "=")))
-    tps_file_df[,current_col_name] <- current_col[seq(from = 2, to = length(current_col), by = 2)]
+    current_scale <- if(is.na(stringr::str_extract(pattern = "SCALE=", string = split_by_image[current_img_index])) == FALSE){
+      gsub(".*SCALE=|\r\n.*", "", split_by_image[current_img_index])
+    } else{"NA"}
 
-    if (current_col_name == "IMAGE") {
-      image_names <- unlist(strsplit(tps_file_df[,current_col_name], split = "[.]"))
-      tps_file_df[,current_col_name] <- image_names[seq(from = 1, to = length(current_col), by = 2)]
-    }
-
+    df_list[[current_img_index]] <-
+      data.frame(IMAGE = strsplit(gsub(".*.^|\r\n.*", "", split_by_image[current_img_index]), split = "\\.")[[1]][1],
+                 ID = gsub(".*ID=|\r\n.*", "", split_by_image[current_img_index]),
+                 SCALE = current_scale)
 
   }
+  tps_file_df <- do.call(rbind.data.frame, df_list)
 
-  tps_file_df$SCALE <- as.numeric(tps_file_df$SCALE)
+  tps_file_df$SCALE <- as.numeric(gsub(",", ".", x = tps_file_df$SCALE))
 
   return(tps_file_df)
 }
