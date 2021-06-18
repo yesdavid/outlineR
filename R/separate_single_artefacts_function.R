@@ -8,7 +8,7 @@
 #' @param outpath Pathname to the folder where the JPEGs of
 #' the singled-out artefacts from this function should be stored.
 #'
-#' @return If return_combined_outlines = TRUE, returns the combined
+  #' @return If return_combined_outlines = TRUE, returns the combined
 #' Coo objects in a single Opn file. If return_combined_outlines = FALSE,
 #' returns a list of coordinate matrices of each open outline.
 #'
