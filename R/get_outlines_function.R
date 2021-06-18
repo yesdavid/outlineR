@@ -39,15 +39,24 @@ get_outlines <- function(outpath, tps_file_rescale = NULL) {
     outline_coordinates <- Momocs::import_jpg(file.path(outpath, artefact_names[input_counter]))
     out_file_single_outline <- Momocs::Out(outline_coordinates)
 
-    if (!is.null(tps_file_rescale)) {
+    if (!is.null(tps_file_rescale)) { # is a TPS file provided?
       tps_file_rescale_df <- tps_file_rescale
+
       # Rescale coordinates from pixels to real length units
-      current_tps_dataset <- subset(tps_file_rescale_df,
-                                    tps_file_rescale_df$IMAGE == strsplit(artefact_names[input_counter],
-                                                                          split = "_pseudo")[[1]][1])
-      # rescale using rescale factor
-      out_file_single_outline <- Momocs::rescale(out_file_single_outline,
-                                                 scaling_factor = current_tps_dataset$SCALE)
+      if(nrow(subset(tps_file_rescale_df, # is the current image listed in the TPS file?
+                     tps_file_rescale_df$IMAGE == strsplit(artefact_names[input_counter],
+                                                           split = "_pseudo")[[1]][1])) == 1){
+        current_tps_dataset <- subset(tps_file_rescale_df,
+                                      tps_file_rescale_df$IMAGE == strsplit(artefact_names[input_counter],
+                                                                            split = "_pseudo")[[1]][1])
+
+        if(is.na(current_tps_dataset$SCALE) == FALSE){ # does the current image have a valid scaling factor?
+          # rescale using rescale factor
+          out_file_single_outline <- Momocs::rescale(out_file_single_outline,
+                                                     scaling_factor = current_tps_dataset$SCALE)
+        }
+      }
+
     }
 
     names(out_file_single_outline) <- strsplit(artefact_names[input_counter],
