@@ -3,7 +3,7 @@
 
 This package is a helpful wrapper around functions from mainly the __Momocs__ (Bonhomme et al. 2014), __EBImage__ (Pau et al. 2010), and __imager__ (Barthelme et al. 2020) packages. It is designed for the fast and easy extraction of single outline shapes of, for example, stone tools from images containing multiple thereof, such as the ones present in archaeological publications.
 
-An in-depth, step-by-step protocol can be found on https://dx.doi.org/10.17504/protocols.io.bygaptse.
+An in-depth, __step-by-step protocol__ can be found on https://dx.doi.org/10.17504/protocols.io.bygaptse.
 
 ## Installation   
 
